@@ -33,7 +33,7 @@ from difflib import SequenceMatcher #Fuzzy Search
 reload(sys)
 sys.setdefaultencoding('UTF8')
 
-#Creates the Base URL, the game's name will be appened to this
+#Creates the Base URL, the game's name will be appended to this
 api_key = "" # Get one here: https://auth.giantbomb.com/signup/
 feild_list_array = ["genres", "name", "platforms", "expected_release_year", "original_release_date"] #The fields to get from the database
 baseURL = 'http://www.giantbomb.com/api/search/?api_key=' + api_key + '&format=xml&query=\''
@@ -105,7 +105,7 @@ sys.stdout.write("\r0/" + str(int(numberofGames)) + " 0%")
 
 #For each item in the videogames file
 with open("videogames.txt") as inputFile:
-    #game is the game privided by the user
+    #game is the game provided by the user
     for game in inputFile:
         #Try block to prevent any 504 errors
         try:
@@ -151,7 +151,7 @@ with open("videogames.txt") as inputFile:
                         suggestion = str(node.getElementsByTagName("name")[0].firstChild.data).rstrip()
                         similarity = newSimilarity
 
-                        #If the similarity is higher than the threashold consider the games a better match
+                        #If the similarity is higher than the threshold consider the games a better match
                         if similarity >= similarityThreshold:
                             found = True
                             similarityFound = True
@@ -189,7 +189,7 @@ with open("videogames.txt") as inputFile:
                     else:
                         foundPlatform = preferredPlatformArray[minIndex]
 
-                    #If the game provided was above the similarity threashold write the game to the succeeded file with the old game appended to the end
+                    #If the game provided was above the similarity threshold write the game to the succeeded file with the old game appended to the end
                     if similarityFound:
                         outputString += (string.replace(str(game.rstrip()), ",", "") + "," + releaseDate + "," + string.replace(foundPlatform, ",", "") + "," + oldGame)
 

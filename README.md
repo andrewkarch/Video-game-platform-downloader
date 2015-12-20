@@ -1,6 +1,6 @@
 # Video Game Platform Downloader
 
-A simple application that gets the year and platform of a list of video games. A lot faster and easier than writting them all down by hand.
+A simple application that gets the year and platform of a list of video games. A lot faster and easier than writing them all down by hand.
 
 Will be added to a later application to allow a single game to be added.
 
